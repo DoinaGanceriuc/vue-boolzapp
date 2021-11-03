@@ -19,7 +19,7 @@
 }
 /* container */
 .container {
-  height: 700px;
+  /*  height: 700px; */
   background-color: #fff;
   position: absolute;
   top: 1rem;
@@ -30,7 +30,7 @@
 /* site_bar */
 .site_bar {
   height: 100%;
-  background-color: #000;
+  /* background-color: #000; */
   width: 350px;
 }
 /* profile */
@@ -55,11 +55,10 @@ img {
 }
 /* notifications */
 .notifications {
-  height: 100px;
   background-color: #8edafc;
   display: flex;
   align-items: center;
-  padding: 0 0.5rem;
+  padding: 1rem 0.5rem;
 }
 .bell {
   height: 50px;
@@ -78,7 +77,7 @@ img {
 
 /* search */
 .search {
-  height: 50px;
+  padding: 0.5rem 0;
   background-color: #eaebe7;
   display: flex;
   align-items: center;
@@ -91,6 +90,18 @@ img {
 }
 .form-control::placeholder {
   color: #b6b9bb;
+}
+/* users */
+.users {
+  background-color: #fff;
+  background-color: #eaebe7;
+}
+.single_user {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  padding: 1rem 0.5rem;
+  margin-bottom: 1px;
 }
 /* site_right */
 .site_right {
