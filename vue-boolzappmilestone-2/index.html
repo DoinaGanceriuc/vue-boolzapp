@@ -93,32 +93,23 @@
                         </div>
                         <!-- /.user_inline -->
                         <div class="background_messages">
-                            <div class="contened_sended_messages"
-                                v-for="(contact, index)
+                            <div class="contened_messages" v-for="message
                                 in
-                                contacts">
-                                <div v-if="contact.name == 'Michele'"
-                                    class="sended"
-                                    v-for="message in
-                                    contact.messages">
-                                    <p class="m-0 text-end" v-if="message.status
-                                        == 'sent'">{{message.text}}
+                                contacts[counter].messages">
+                                <div v-if="message.status == 'sent'"
+                                    class="sended">
+                                    <p class="m-0"> {{message.text}}
                                     </p>
                                 </div>
-                                <div class="contened_received_messages">
-                                    <div v-if="contact.name == 'Michele'"
-                                        class="received" v-for="message in
-                                        contact.messages">
-                                        <p class="m-0" v-if="message.status
-                                            == 'received'">{{message.text}}</p>
-                                    </div>
-
+                                <div v-else
+                                    class="received">
+                                    <p class="m-0">
+                                        {{message.text}}
+                                    </p>
 
                                 </div>
+
                             </div>
-
-
-
                         </div>
                         <!-- /.background_messages -->
                         <div class="send_message">

@@ -132,26 +132,22 @@ img {
   background-size: cover;
   background-repeat: no-repeat;
 }
-.contened_received_messages,
-.contened_sended_messages {
+.contened_messages {
   padding: 1rem;
-  display: flex;
-  flex-direction: column;
-}
-.contened_sended_messages {
-  justify-content: end;
 }
 .received,
 .sended {
   border-radius: 10px;
   padding: 0.5rem 1rem;
   margin: 0 1rem;
+  width: 50%;
 }
 .received {
   background-color: #fff;
 }
 .sended {
   background-color: #d5f9ba;
+  margin-left: auto;
 }
 
 /* send message */
