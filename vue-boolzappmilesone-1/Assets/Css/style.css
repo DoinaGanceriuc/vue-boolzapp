@@ -75,6 +75,23 @@ img {
   color: #6d9290;
   font-size: 0.8rem;
 }
+
+/* search */
+.search {
+  height: 50px;
+  background-color: #eaebe7;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.search > i {
+  position: absolute;
+  left: 1rem;
+  color: #b6b9bb;
+}
+.form-control::placeholder {
+  color: #b6b9bb;
+}
 /* site_right */
 .site_right {
   height: 100%;
