@@ -92,5 +92,6 @@ const app = new Vue ({
     },
     ]
       
-      }
+      },
+  sended: "sended"
     })

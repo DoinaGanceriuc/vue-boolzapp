@@ -93,18 +93,31 @@
                         </div>
                         <!-- /.user_inline -->
                         <div class="background_messages">
-                            <div class="contened_received_messages">
-                                <div class="received">
-                                    <p class="m-0">Lorem ipsum dolor sit amet</p>
+                            <div class="contened_sended_messages"
+                                v-for="(contact, index)
+                                in
+                                contacts">
+                                <div v-if="contact.name == 'Michele'"
+                                    class="sended"
+                                    v-for="message in
+                                    contact.messages">
+                                    <p class="m-0 text-end" v-if="message.status
+                                        == 'sent'">{{message.text}}
+                                    </p>
                                 </div>
+                                <div class="contened_received_messages">
+                                    <div v-if="contact.name == 'Michele'"
+                                        class="received" v-for="message in
+                                        contact.messages">
+                                        <p class="m-0" v-if="message.status
+                                            == 'received'">{{message.text}}</p>
+                                    </div>
 
 
+                                </div>
                             </div>
-                            <div class="contened_sended_messages">
-                                <div class="sended"><p class="m-0 text-end">Lorem
-                                        ipsum dolor sit amet consectetur
-                                        adipisicing elit. </p></div>
-                            </div>
+
+
 
                         </div>
                         <!-- /.background_messages -->
