@@ -5,6 +5,14 @@
   padding: 0;
 }
 
+/* utility */
+.color_text {
+  color: #b1b1b1;
+}
+.size_text_8 {
+  font-size: 0.8rem;
+}
+
 /* back */
 .back {
   position: relative;
@@ -34,7 +42,8 @@
   width: 350px;
 }
 /* profile */
-.profile {
+.profile,
+.user_inline {
   height: calc(100px - 1rem);
   background-color: #eaeaea;
   display: flex;
@@ -42,14 +51,16 @@
   justify-content: space-between;
   padding: 0 0.5rem;
 }
-.profile_img {
+.profile_img,
+.user_inline_img {
   display: flex;
   align-items: center;
 }
 img {
   border-radius: 50%;
 }
-.profile_icons > i {
+.profile_icons > i,
+.user_inline_icons > i {
   padding: 0 0.5rem;
   color: #b1b1b1;
 }
