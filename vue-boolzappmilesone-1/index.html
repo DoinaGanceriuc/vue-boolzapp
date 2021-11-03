@@ -60,27 +60,14 @@
                         </div>
                         <!-- /.search -->
                         <div class="users">
-                            <div class="single_user">
-                                <img width="50" src="./Assets/img/avatar_1.jpg"
+                            <div class="single_user" v-for="contact in
+                                contacts">
+                                <img width="50"
+                                    :src="'./Assets/img/avatar' + contact.avatar
+                                    + '.jpg'"
                                     alt="">
-                                <p class="px-3">Michele</p>
+                                <p class="px-3">{{contact.name}}</p>
                             </div>
-                            <div class="single_user">
-                                <img width="50" src="./Assets/img/avatar_2.jpg"
-                                    alt="">
-                                <p class="px-3">Fabio</p>
-                            </div>
-                            <div class="single_user">
-                                <img width="50" src="./Assets/img/avatar_3.jpg"
-                                    alt="">
-                                <p class="px-3">Samuele</p>
-                            </div>
-                            <div class="single_user">
-                                <img width="50" src="./Assets/img/avatar_4.jpg"
-                                    alt="">
-                                <p class="px-3">Luisa</p>
-                            </div>
-
                         </div>
                         <!-- /.users -->
                     </div>
