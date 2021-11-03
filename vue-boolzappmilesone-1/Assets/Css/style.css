@@ -26,13 +26,35 @@
   left: 5rem;
   display: flex;
 }
+
+/* site_bar */
 .site_bar {
   height: 100%;
   background-color: #000;
-  width: 30%;
+  width: 300px;
 }
+.profile {
+  height: calc(100px - 1rem);
+  background-color: #eaeaea;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 0.5rem;
+}
+.profile_img {
+  display: flex;
+  align-items: center;
+}
+img {
+  border-radius: 50%;
+}
+.profile_icons > i {
+  padding: 0 0.5rem;
+  color: #b1b1b1;
+}
+/* site_right */
 .site_right {
   height: 100%;
   background-color: grey;
-  width: 70%;
+  width: calc(100% - 300px);
 }
