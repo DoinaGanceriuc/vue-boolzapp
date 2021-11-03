@@ -64,6 +64,7 @@ img {
 .user_inline_icons > i {
   padding: 0 0.5rem;
   color: #b1b1b1;
+  font-size: 1.5rem;
 }
 /* notifications */
 .notifications {
@@ -81,6 +82,7 @@ img {
   align-items: center;
   justify-content: center;
   color: #8edafc;
+  font-size: 1.5rem;
 }
 .notifications_text > a {
   color: #6d9290;
@@ -99,6 +101,7 @@ img {
   position: absolute;
   left: 1rem;
   color: #b6b9bb;
+  font-size: 1.5rem;
 }
 .form-control::placeholder {
   color: #b6b9bb;
@@ -136,4 +139,5 @@ img {
 }
 .send_message > i {
   color: #6b798e;
+  font-size: 1.5rem;
 }
