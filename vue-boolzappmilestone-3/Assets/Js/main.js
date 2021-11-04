@@ -117,9 +117,14 @@ const app = new Vue ({
     },
     showResponse() {
       return this.respose = true
+     
     }
 
     
-  }
+  },
+  mounted () {
+  setTimeout(this.showResponse, 5000)
+
+}
  
     })
