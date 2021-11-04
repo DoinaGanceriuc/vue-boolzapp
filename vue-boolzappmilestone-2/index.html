@@ -76,9 +76,10 @@
                         <div class="user_inline">
                             <div class="user_inline_img">
                                 <img width="50"
-                                    src="./Assets/img/avatar_1.jpg" alt="">
+                                    :src="'./Assets/img/avatar' +
+                                    contacts[counter].avatar + '.jpg'" alt="">
                                 <div class="user_inline_text ms-3">
-                                    <p class="m-0">Michele</p>
+                                    <p class="m-0">{{contacts[counter].name}}</p>
                                     <p class="m-0 color_text size_text_8">Ultimo
                                         accesso
                                         oggi alle</p>
