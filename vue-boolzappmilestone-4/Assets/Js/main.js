@@ -7,7 +7,7 @@ const app = new Vue ({
   el: "#root",
   data: {
     newMessage: "",
-     counter: 0,
+    counter: 0,
     contacts: [
     {
     name: 'Michele',
@@ -95,8 +95,8 @@ const app = new Vue ({
     ],
     newMessages: [],
     respose: false,
-    showed: true,
-    searchNames: ""
+    searchNames: "",
+    userActive: "userActive"
       
       },
   methods: {
@@ -117,7 +117,7 @@ const app = new Vue ({
     },
     showResponse() {
       return this.respose = true
-    }
+    }      
 
     
   },
