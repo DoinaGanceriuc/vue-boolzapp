@@ -26,6 +26,9 @@ body {
 .form-control {
   border: none;
 }
+.pointer {
+  cursor: pointer;
+}
 
 /* container */
 .container {
@@ -121,6 +124,9 @@ img {
   padding: 1rem 0.5rem;
   margin-bottom: 1px;
   height: calc((100% - 4px) / 4);
+}
+.single_user:hover {
+  background-color: #e9ebeb;
 }
 .userActive {
   background-color: #e9ebeb;

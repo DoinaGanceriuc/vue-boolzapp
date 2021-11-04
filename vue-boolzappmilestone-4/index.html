@@ -21,22 +21,22 @@
             <div class="container p-0">
                 <div class="site_bar">
                     <div class="profile">
-                        <div class="profile_img">
+                        <div class="profile_img pointer">
                             <img width="50"
                                 src="./Assets/img/avatar_io.jpg" alt="">
                             <p class="m-0">Nome Utente</p>
                         </div>
                         <div class="profile_icons">
-                            <i class="fas fa-circle-notch"></i>
-                            <i class="fas fa-comment-alt"></i>
-                            <i class="fas fa-ellipsis-v"></i>
+                            <i class="fas fa-circle-notch pointer"></i>
+                            <i class="fas fa-comment-alt pointer"></i>
+                            <i class="fas fa-ellipsis-v pointer"></i>
                         </div>
 
                     </div>
                     <!-- /.profile -->
                     <div class="notifications">
                         <div class="bell mx-2">
-                            <i class="fas fa-bell-slash"></i>
+                            <i class="fas fa-bell-slash pointer"></i>
                         </div>
                         <div class="notifications_text lh-1">
                             <p class="m-0">Ricevi notifiche di nuovi
@@ -55,7 +55,8 @@
                     </div>
                     <!-- /.search -->
                     <div class="users">
-                        <div class="single_user" :class="[counter] == index ?
+                        <div class="single_user pointer" :class="[counter] ==
+                            index ?
                             userActive : ''" v-for="(contact, index) in
                             contacts" :id="index"
                             @click="changeChat(index)">
@@ -71,7 +72,7 @@
                 <!-- /.site_bar -->
                 <div class="site_right">
                     <div class="user_inline">
-                        <div class="user_inline_img">
+                        <div class="user_inline_img pointer">
                             <img width="50"
                                 :src="'./Assets/img/avatar' +
                                 contacts[counter].avatar + '.jpg'" alt="">
@@ -83,9 +84,9 @@
                             </div>
                         </div>
                         <div class="user_inline_icons">
-                            <i class="fas fa-search"></i>
-                            <i class="fas fa-paperclip"></i>
-                            <i class="fas fa-ellipsis-v"></i>
+                            <i class="fas fa-search pointer"></i>
+                            <i class="fas fa-paperclip pointer"></i>
+                            <i class="fas fa-ellipsis-v pointer"></i>
                         </div>
 
                     </div>
@@ -127,13 +128,13 @@
                     </div>
                     <!-- /.background_messages -->
                     <div class="send_message">
-                        <i class="far fa-smile"></i>
+                        <i class="far fa-smile pointer"></i>
                         <input class="form-control mx-2 text-center"
                             type="text"
                             placeholder="Scrivi un messaggio"
                             aria-label="text" v-model="newMessage"
                             @keyup.enter="sendMessage()">
-                        <i class="fas fa-microphone"></i>
+                        <i class="fas fa-microphone pointer"></i>
                     </div>
                     <!-- /.send_message -->
 
