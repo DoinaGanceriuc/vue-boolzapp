@@ -51,7 +51,8 @@
                         <input class="form-control mx-2 text-center"
                             type="text"
                             placeholder="Cerca o inizia una nuova chat"
-                            aria-label="text" v-model="searchNames">
+                            aria-label="text" v-model="searchNames"
+                            @keyup.enter="searchLetters()">
                     </div>
                     <!-- /.search -->
                     <div class="users">
@@ -59,7 +60,7 @@
                             index ?
                             userActive : ''" v-for="(contact, index) in
                             contacts" :id="index"
-                            @click="changeChat(index)">
+                            @click="changeChat(index)" v-show="contact.visible">
                             <img width="50"
                                 :src="'./Assets/img/avatar' + contact.avatar
                                 + '.jpg'"

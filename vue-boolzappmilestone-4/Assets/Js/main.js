@@ -113,7 +113,23 @@ const app = new Vue ({
     },
     showResponse() {
       return this.respose = true
-    }      
+    },
+    searchLetters() {
+      this.contacts.forEach((singleObject, index) => {
+        console.log(singleObject.name, index);
+        const nameLower = singleObject.name.toLowerCase()
+        console.log(nameLower);
+
+
+           if (!nameLower.includes(this.searchNames)) {
+            singleObject.visible = false
+           
+       
+
+      }
+        
+      });
+    },
 
     
   },
