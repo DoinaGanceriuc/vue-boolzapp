@@ -113,23 +113,24 @@ const app = new Vue ({
       text: this.newMessage
       });
       this.newMessage = ""
+      setTimeout(this.showResponse, 1000)
       
     },
     showResponse() {
-       this.contacts[this.counter].messages.push({
+      this.contacts[this.counter].messages.push({
       date: "10/01/2020 15:50:00",
       status: "received",
       text: "Ok"
       });
-      return this.respose = true
      
-    }
+    },
+    
 
     
   },
-  mounted () {
+  /* mounted () {
   setTimeout(this.showResponse, 1000)
 
-}
+} */
  
     })
