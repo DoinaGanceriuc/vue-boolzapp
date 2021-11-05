@@ -103,16 +103,25 @@ const app = new Vue ({
     changeChat(i) {
        if (i < this.contacts.length) {
         this.counter = i
-        this.newMessages = []
       }
     },
     sendMessage() {
-      this.newMessages.push(this.newMessage)
-      //console.log(this.newMessages);
+      this.contacts[this.counter].messages.push({
+      date: "10/01/2020 15:50:00",
+      status: "sent",
+      text: this.newMessage
+      });
       this.newMessage = ""
+      setTimeout(this.showResponse, 1000)
+      
     },
     showResponse() {
-      return this.respose = true
+      this.contacts[this.counter].messages.push({
+      date: "10/01/2020 15:50:00",
+      status: "received",
+      text: "Ok"
+      });
+     
     },
     searchLetters() {
       this.contacts.forEach((singleObject, index) => {
@@ -133,10 +142,10 @@ const app = new Vue ({
 
     
   },
-  mounted () {
+  /* mounted () {
   setTimeout(this.showResponse, 1000)
 
 
-}
+} */
  
     })
