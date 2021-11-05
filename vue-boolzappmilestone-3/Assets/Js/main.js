@@ -8,7 +8,7 @@ const app = new Vue ({
   el: "#root",
   data: {
     newMessage: "",
-     counter: 0,
+    counter: 0,
     contacts: [
     {
     name: 'Michele',
@@ -94,7 +94,11 @@ const app = new Vue ({
     ],
     },
     ],
-    newMessages: [],
+    newMessages: {
+      date: "10/01/2020 15:50:00",
+      status: "sent",
+      text: this.newMessage
+    },
     respose: false,
     showed: true
       
@@ -106,9 +110,20 @@ const app = new Vue ({
       }
     },
     sendMessage() {
-      this.newMessages.push(this.newMessage)
+      /* - definire un array vuoto
+      - pushare dentro l'array il testo digitato nell'input
+      - mostrare il contenuto a schermo sotto forma di messaggio inviato
+       */
+
+
+      //this.newMessages.push(this.newMessage)
       console.log(this.newMessages);
       this.newMessage = ""
+
+     /*  this.contacts.messages.push(this.newMessages) */
+      //console.log(this.contacts[0].messages); 
+      this.contacts[0].messages.push(this.newMessages);
+      console.log(this.contacts[0].messages); 
     },
     showResponse() {
       return this.respose = true
