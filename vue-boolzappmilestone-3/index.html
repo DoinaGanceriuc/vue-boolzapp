@@ -56,7 +56,8 @@
                     </div>
                     <!-- /.search -->
                     <div class="users">
-                        <div class="single_user" v-for="(contact, index) in
+                        <div class="single_user" :class="[counter] == index ?
+                            userActive : ''" v-for="(contact, index) in
                             contacts" :id="index"
                             @click="changeChat(index)">
                             <img width="50"
@@ -108,28 +109,14 @@
                             </div>
 
                         </div>
-                        <div class="contened_new_messages"
-                            v-for="newMessage
-                            in
-                            newMessages" v-if="counter == 0">
-                            <div class="sended">
-                                <p class="m-0"> {{newMessage}}
-                                </p>
-                            </div>
-                            <div class="received my-2" v-show="respose">
-                                <p class="m-0">
-                                    Ok
-                                </p>
 
-                            </div>
-
-                        </div>
 
                     </div>
                     <!-- /.background_messages -->
                     <div class="send_message">
                         <i class="far fa-smile"></i>
-                        <input class="form-control mx-2 text-center"
+                        <input id="insert_text" class="form-control mx-2
+                            text-center"
                             type="text"
                             placeholder="Scrivi un messaggio"
                             aria-label="text" v-model="newMessage"
