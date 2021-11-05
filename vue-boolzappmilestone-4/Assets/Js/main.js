@@ -101,18 +101,14 @@ const app = new Vue ({
       },
   methods: {
     changeChat(i) {
-      console.log("cliccato");
-      console.log(i);
-       if(i > 0) {
-       ++this.counter
-      }  else if (i == 0) {
-        this.counter = 0
-
+       if (i < this.contacts.length) {
+        this.counter = i
+        this.newMessages = []
       }
     },
     sendMessage() {
       this.newMessages.push(this.newMessage)
-      console.log(this.newMessages);
+      //console.log(this.newMessages);
       this.newMessage = ""
     },
     showResponse() {
