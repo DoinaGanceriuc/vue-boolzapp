@@ -93,10 +93,14 @@ const app = new Vue ({
     ],
     },
     ],
-    newMessages: [],
     respose: false,
     searchNames: "",
-    userActive: "userActive"
+    userActive: "userActive",
+    date: new Date().toLocaleTimeString(),
+    showSendedMenu: false,
+    showReceivedMenu: false,
+    firstMessage: 0,
+    deleted: true,
       
       },
   methods: {
@@ -125,9 +129,9 @@ const app = new Vue ({
     },
     searchLetters() {
       this.contacts.forEach((singleObject, index) => {
-        console.log(singleObject.name, index);
+        //console.log(singleObject.name, index);
         const nameLower = singleObject.name.toLowerCase()
-        console.log(nameLower);
+        //console.log(nameLower);
 
 
            if (!nameLower.includes(this.searchNames)) {
@@ -139,6 +143,15 @@ const app = new Vue ({
         
       });
     },
+
+    deleteMessage () {
+    console.log("cliccato su delete");
+   
+
+
+             
+
+  }
 
     
   },
