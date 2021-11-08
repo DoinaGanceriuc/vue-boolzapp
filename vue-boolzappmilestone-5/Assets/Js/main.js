@@ -96,7 +96,9 @@ const app = new Vue ({
     respose: false,
     searchNames: "",
     userActive: "userActive",
-    date: new Date().toLocaleString(),
+    date: dayjs().second(1).format('DD/MM/YYYY HH:mm:ss'),
+    dateResponse: dayjs().second(2).format('DD/MM/YYYY HH:mm:ss')
+
     //showSendedMenu: false,
          
       },
@@ -120,7 +122,7 @@ const app = new Vue ({
     },
     showResponse() {
       this.contacts[this.counter].messages.push({
-      date: this.date,
+      date: this.dateResponse,
       status: "received",
       text: "Ok"
       });
