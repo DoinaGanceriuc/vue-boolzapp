@@ -29,6 +29,9 @@ body {
 .pointer {
   cursor: pointer;
 }
+.hover:hover {
+  background-color: #e9ebeb;
+}
 
 /* container */
 .container {
@@ -119,11 +122,12 @@ img {
 }
 .single_user {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   background-color: #fff;
   padding: 1rem 0.5rem;
   margin-bottom: 1px;
   height: calc((100% - 4px) / 4);
+  justify-content: space-between;
 }
 .single_user:hover {
   background-color: #e9ebeb;
@@ -181,21 +185,23 @@ img {
   position: relative;
   display: flex;
   flex-direction: column;
+  margin-bottom: 0.5rem;
 }
 .hideMenu {
   width: 200px;
   height: 100px;
   background-color: #fff;
   position: absolute;
-  top: 1rem;
-  left: 10rem;
-  z-index: 10;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
   padding: 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   z-index: 10;
+  margin-bottom: 1rem;
 }
 
 /* send message */

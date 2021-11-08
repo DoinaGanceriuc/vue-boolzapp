@@ -96,22 +96,21 @@ const app = new Vue ({
     respose: false,
     searchNames: "",
     userActive: "userActive",
-    date: new Date().toLocaleTimeString(),
-    showSendedMenu: false,
-    showReceivedMenu: false,
-    firstMessage: 0,
-    deleted: true,
-      
+    date: new Date().toLocaleString(),
+    //showSendedMenu: false,
+         
       },
   methods: {
     changeChat(i) {
        if (i < this.contacts.length) {
         this.counter = i
+        console.log(i);
+        
       }
     },
     sendMessage() {
       this.contacts[this.counter].messages.push({
-      date: "10/01/2020 15:50:00",
+      date: this.date,
       status: "sent",
       text: this.newMessage
       });
@@ -121,7 +120,7 @@ const app = new Vue ({
     },
     showResponse() {
       this.contacts[this.counter].messages.push({
-      date: "10/01/2020 15:50:00",
+      date: this.date,
       status: "received",
       text: "Ok"
       });
@@ -143,19 +142,32 @@ const app = new Vue ({
         
       });
     },
-
-    deleteMessage () {
-    console.log("cliccato su delete");
+   sendedShowMessage(i) {
    
-
-
-             
-
-  }
-
+     console.log("cliccato sul messaggio");
+ 
+     
+       if( i < this.contacts[this.counter].messages.length) {
+                 this.contacts[this.counter].messages[i].showSendedMenu = true
+              }
+              
+              console.log(this.contacts[this.counter].messages);
     
+      console.log(i);
+       
+    },
+
+    deleteMessage (i) {
+    //console.log("cliccato su delete");
+  this.contacts[this.counter].messages.splice(i, 1);
+ 
+ /*  console.log(this.contacts[this.counter].messages); */
+}
+
+
+   
   },
-  /* mounted () {
+ /* mounted () {
   setTimeout(this.showResponse, 1000)
 
 

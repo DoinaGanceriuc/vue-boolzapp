@@ -61,13 +61,23 @@
                             :class="[counter] == index ? userActive : ''"
                             v-for="(contact, index) in contacts"
                             :id="index"
-                            @click="changeChat(index)"
-                            v-show="contact.visible">
-                            <img width="50"
+                            @click="changeChat(index)" v-show="contact.visible">
+                            <img width="70" height="70"
                                 :src="'./Assets/img/avatar' + contact.avatar
                                 + '.jpg'"
                                 alt="">
-                            <p class="px-3">{{contact.name}}</p>
+                            <div class="px-3 d-flex flex-column">
+                                <p class="m-0 fs-5">{{contact.name}}
+                                </p>
+                                <small class="text-muted">{{contact.messages[contact.messages.length
+                                    -
+                                    1].text.substring(0, 10) + '...'}}</small>
+                            </div>
+
+                            <small class="text-muted">{{contact.messages[contact.messages.length
+                                -
+                                1].date}}</small>
+
                         </div>
                     </div>
                     <!-- /.users -->
@@ -83,7 +93,7 @@
                                 <p class="m-0">{{contacts[counter].name}}</p>
                                 <p class="m-0 color_text size_text_8">Ultimo
                                     accesso
-                                    oggi alle {{date}}</p>
+                                    {{date}}</p>
                             </div>
                         </div>
                         <div class="user_inline_icons">
@@ -95,32 +105,48 @@
                     </div>
                     <!-- /.user_inline -->
                     <div class="background_messages">
-                        <div class="contened_messages" v-for="message
+                        <div class="contened_messages" v-for="(message, index)
                             in
                             contacts[counter].messages">
                             <div v-if="message.status == 'sent'"
-                                class="sended">
-                                <p class="m-0"> {{message.text}}
-                                </p>
-                                <small class="text-end">{{message.date}}</small>
-                                <div
-                                    class="hideMenu
-                                    sended">
-                                    <p class="m-0">Message info</p>
-                                    <p class="m-0 pointer hover"
-                                        @click="deleteMessage()">Delete
-                                        message</p>
-                                </div>
-                            </div>
-                            <div v-else
-                                class="received">
+                                class="sended"
+                                @click="sendedShowMessage(index)">
                                 <p class="m-0">
                                     {{message.text}}
                                 </p>
                                 <small class="text-end">{{message.date}}</small>
+                                <div class="hideMenu sended"
+                                    v-show="contacts[counter].messages[index].showSendedMenu"
+                                    v-if="">
+                                    <p class="m-0">Message info</p>
+                                    <p class="m-0 pointer hover"
+                                        @click="deleteMessage(index)">Delete
+                                        message</p>
+                                </div>
+                            </div>
+                            <div v-else
+                                class="received"
+                                @click="sendedShowMessage(index)">
+                                <p class="m-0">
+                                    {{message.text}}
+                                </p>
+                                <small class="text-end">{{message.date}}</small>
+                                <div class="hideMenu received"
+                                    v-show="contacts[counter].messages[index].showSendedMenu"
+                                    v-if="">
+                                    <p class="m-0">Message info</p>
+                                    <p class="m-0 pointer hover"
+                                        @click="deleteMessage(index)">Delete
+                                        message</p>
+                                </div>
                             </div>
 
+
+
                         </div>
+
+
+
 
 
                     </div>
